@@ -127,8 +127,8 @@ namespace HPlusSport.Security.Web.Migrations
                 columns: new[] { "Id", "Email", "Hash", "Password", "Salt" },
                 values: new object[,]
                 {
-                    { 1, "adam@example.com", "", "Adam's secret", "" },
-                    { 2, "barbara@example.com", "", "b@rb@r@", "" }
+                    { 1, "adam@example.com", "nStQ1D/mFTo4ofFEzRXxVAnfsU0=", "", "PaKHPA5LY1b3lP7Us3XqJulRN7F4F7ZizWPP+WEG1vM=" },
+                    { 2, "barbara@example.com", "l2l+gtUGqgUFeq4en3QTO1+LHsA=", "", "su9BbvRSlhylE6H9nAaNCA5/s7UrDVRlsfDWg+9RtTg=" }
                 });
 
             migrationBuilder.InsertData(

@@ -489,17 +489,17 @@ namespace HPlusSport.Security.Web.Migrations
                         {
                             Id = 1,
                             Email = "adam@example.com",
-                            Hash = "",
-                            Password = "Adam's secret",
-                            Salt = ""
+                            Hash = "nStQ1D/mFTo4ofFEzRXxVAnfsU0=",
+                            Password = "",
+                            Salt = "PaKHPA5LY1b3lP7Us3XqJulRN7F4F7ZizWPP+WEG1vM="
                         },
                         new
                         {
                             Id = 2,
                             Email = "barbara@example.com",
-                            Hash = "",
-                            Password = "b@rb@r@",
-                            Salt = ""
+                            Hash = "l2l+gtUGqgUFeq4en3QTO1+LHsA=",
+                            Password = "",
+                            Salt = "su9BbvRSlhylE6H9nAaNCA5/s7UrDVRlsfDWg+9RtTg="
                         });
                 });
 
