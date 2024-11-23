@@ -6,12 +6,6 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//builder.WebHost.UseKestrel(options =>
-//{
-//    options.AddServerHeader = false;
-
-//});
-
 // Add services to the container.
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -21,8 +15,17 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = true;
+
+    // Bonus Feature: Lockout settings
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(1); // Lockout duration
+    options.Lockout.MaxFailedAccessAttempts = 5; // Number of failed attempts before lockout
+    options.Lockout.AllowedForNewUsers = true; // Apply lockout to new users
+})
+.AddEntityFrameworkStores<ApplicationDbContext>();
+
 builder.Services.ConfigureApplicationCookie(o =>
 {
     o.Events = new CookieAuthenticationEvents()
